@@ -64,7 +64,7 @@ def set_testnet():
     XPUB_HEADER = 0x043587cf
     XPRV_HEADER_ALT = 0x0436ef7d
     XPUB_HEADER_ALT = 0x0436f6e1
-    HEADERS_URL = "https://electrum-ltc.org/testnet_headers"
+    HEADERS_URL = "https://electrum.khc.org/testnet_headers"
     GENESIS = "4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"
 
 def set_nolnet():

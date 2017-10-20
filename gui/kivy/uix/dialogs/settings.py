@@ -3,18 +3,18 @@ from kivy.factory import Factory
 from kivy.properties import ObjectProperty
 from kivy.lang import Builder
 
-from electrum_ltc.util import base_units
-from electrum_ltc.i18n import languages
-from electrum_ltc_gui.kivy.i18n import _
-from electrum_ltc.plugins import run_hook
-from electrum_ltc import coinchooser
-from electrum_ltc.util import fee_levels
+from electrum.khc.util import base_units
+from electrum.khc.i18n import languages
+from electrum.khc.gui.kivy.i18n import _
+from electrum.khc.plugins import run_hook
+from electrum.khc.import coinchooser
+from electrum.khc.util import fee_levels
 
 from choice_dialog import ChoiceDialog
 
 Builder.load_string('''
 #:import partial functools.partial
-#:import _ electrum_ltc_gui.kivy.i18n._
+#:import _ electrum.khc.gui.kivy.i18n._
 
 <SettingsDialog@Popup>
     id: settings

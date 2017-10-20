@@ -1,9 +1,9 @@
 include LICENCE RELEASE-NOTES AUTHORS
 include README.rst
-include electrum-ltc.conf.sample
-include electrum-ltc.desktop
+include electrum.khc.conf.sample
+include electrum.khc.desktop
 include *.py
-include electrum-ltc
+include electrum-khc
 recursive-include lib *.py
 recursive-include gui *.py
 recursive-include plugins *.py
