@@ -5,14 +5,14 @@ import threading
 from binascii import hexlify, unhexlify
 from functools import partial
 
-from electrum.khc.bitcoin import (bc_address_to_hash_160, xpub_from_pubkey,
+from electrum_ltc.bitcoin import (bc_address_to_hash_160, xpub_from_pubkey,
                               public_key_to_p2pkh, EncodeBase58Check,
                               TYPE_ADDRESS, TYPE_SCRIPT,
                               TESTNET, ADDRTYPE_P2PKH, ADDRTYPE_P2SH, ADDRTYPE_P2SH_ALT)
-from electrum.khc.i18n import _
-from electrum.khc.plugins import BasePlugin, hook
-from electrum.khc.transaction import deserialize, Transaction
-from electrum.khc.keystore import Hardware_KeyStore, is_xpubkey, parse_xpubkey
+from electrum_ltc.i18n import _
+from electrum_ltc.plugins import BasePlugin, hook
+from electrum_ltc.transaction import deserialize, Transaction
+from electrum_ltc.keystore import Hardware_KeyStore, is_xpubkey, parse_xpubkey
 
 from ..hw_wallet import HW_PluginBase
 

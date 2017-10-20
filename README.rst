@@ -1,4 +1,4 @@
-Electrum-KHC - Lightweight Litecoin client
+Electrum-LTC - Lightweight Litecoin client
 ==========================================
 
 ::
@@ -7,7 +7,7 @@ Electrum-KHC - Lightweight Litecoin client
   Original Author: Thomas Voegtlin
   Port Maintainer: Pooler
   Language: Python
-  Homepage: https://khmercrypto.com/
+  Homepage: https://electrum-ltc.org/
 
 
 
@@ -27,7 +27,7 @@ Electrum from its root directory, without installing it on your
 system; all the python dependencies are included in the 'packages'
 directory. To run Electrum from its root directory, just do::
 
-    ./electrum-khc
+    ./electrum-ltc
 
 You can also install Electrum on your system, by running this command::
 
@@ -47,8 +47,8 @@ Development version
 
 Check out the code from Github::
 
-    git clone git://github.com/pooler/electrum.khc.git
-    cd electrum-khc
+    git clone git://github.com/pooler/electrum-ltc.git
+    cd electrum-ltc
 
 Run install (this should install dependencies)::
 
@@ -93,7 +93,7 @@ Mac OS X
     # On Homebrew installs: 
     ARCHFLAGS="-arch i386 -arch x86_64" sudo python setup-release.py py2app --includes sip
     
-    sudo hdiutil create -fs HFS+ -volname "Electrum-KHC" -srcfolder dist/Electrum-KHC.app dist/electrum.khc.VERSION-macosx.dmg
+    sudo hdiutil create -fs HFS+ -volname "Electrum-LTC" -srcfolder dist/Electrum-LTC.app dist/electrum-ltc-VERSION-macosx.dmg
 
 Windows
 -------

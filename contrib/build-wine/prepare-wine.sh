@@ -97,4 +97,4 @@ wine mingw-get install mingw32-libz
 
 printf "[build]\ncompiler=mingw32\n" > $WINEPREFIX/drive_c/Python27/Lib/distutils/distutils.cfg
 
-wine "$PYHOME\\Scripts\\pip.exe" install.khc.scrypt
+wine "$PYHOME\\Scripts\\pip.exe" install ltc_scrypt

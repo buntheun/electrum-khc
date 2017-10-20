@@ -3,10 +3,10 @@
 
 [Desktop Entry]
 Comment=Lightweight KHcoin Client
-Exec=electrum.khc.%u
+Exec=electrum-ltc %u
 GenericName[en_US]=KHcoin Wallet
 GenericName=KHcoin Wallet
-Icon=electrum-khc
+Icon=electrum-ltc
 Name[en_US]=Electrum KHcoin Wallet
 Name=Electrum KHcoin Wallet
 Categories=Finance;Network;

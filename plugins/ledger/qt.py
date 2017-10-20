@@ -4,10 +4,10 @@ from PyQt4.Qt import (QDialog, QInputDialog, QLineEdit,
                       QVBoxLayout, QLabel, SIGNAL)
 import PyQt4.QtCore as QtCore
 
-from electrum.khc.i18n import _
+from electrum_ltc.i18n import _
 from .ledger import LedgerPlugin
 from ..hw_wallet.qt import QtHandlerBase, QtPluginBase
-from electrum.khc.gui.qt.util import *
+from electrum_ltc_gui.qt.util import *
 
 from btchip.btchipPersoWizard import StartBTChipPersoDialog
 

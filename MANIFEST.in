@@ -1,7 +1,7 @@
 include LICENCE RELEASE-NOTES AUTHORS
 include README.rst
-include electrum.khc.conf.sample
-include electrum.khc.desktop
+include electrum-khc.conf.sample
+include electrum-khc.desktop
 include *.py
 include electrum-khc
 recursive-include lib *.py

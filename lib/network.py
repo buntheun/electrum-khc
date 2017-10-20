@@ -58,7 +58,7 @@ def set_testnet():
     global DEFAULT_PORTS, DEFAULT_SERVERS
     DEFAULT_PORTS = {'t':'51001', 's':'51002'}
     DEFAULT_SERVERS = {
-        'electrum.khc.bysh.me': DEFAULT_PORTS,
+        'electrum-ltc.bysh.me': DEFAULT_PORTS,
         'electrum.khc.xurious.com': DEFAULT_PORTS,
     }
 

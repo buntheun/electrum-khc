@@ -3,8 +3,8 @@
 # A simple script that connects to a server and displays block headers
 
 import time
-from electrum.khc.import SimpleConfig, Network
-from electrum.khc.util import print_msg, json_encode
+from electrum_ltc import SimpleConfig, Network
+from electrum_ltc.util import print_msg, json_encode
 
 # start network
 c = SimpleConfig()

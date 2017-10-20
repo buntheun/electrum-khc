@@ -176,8 +176,8 @@ class GoCoin(ExchangeBase):
 
     def get_rates(self, ccy):
         json = self.get_json('x.g0cn.com', '/prices')
-       .khc.prices = json['prices']['KHC']
-        return dict([(r, Decimal.khc.prices[r])) for r in.khc.prices])
+        ltc_prices = json['prices']['KHC']
+        return dict([(r, Decimal(ltc_prices[r])) for r in ltc_prices])
 
 
 class HitBTC(ExchangeBase):
