@@ -24,10 +24,10 @@
 # SOFTWARE.
 
 
-from electrum_ltc.i18n import _
-from electrum_ltc.util import block_explorer_URL, format_satoshis, format_time, age
-from electrum_ltc.plugins import run_hook
-from electrum_ltc.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
+from electrum_khc.i18n import _
+from electrum_khc.util import block_explorer_URL, format_satoshis, format_time, age
+from electrum_khc.plugins import run_hook
+from electrum_khc.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
 from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 from util import MyTreeWidget, pr_tooltips, pr_icons

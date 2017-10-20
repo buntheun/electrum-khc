@@ -27,10 +27,10 @@
 import webbrowser
 
 from util import *
-from electrum_ltc.i18n import _
-from electrum_ltc.util import block_explorer_URL, format_satoshis, format_time
-from electrum_ltc.plugins import run_hook
-from electrum_ltc.util import timestamp_to_datetime, profiler
+from electrum_khc.i18n import _
+from electrum_khc.util import block_explorer_URL, format_satoshis, format_time
+from electrum_khc.plugins import run_hook
+from electrum_khc.util import timestamp_to_datetime, profiler
 
 
 TX_ICONS = [

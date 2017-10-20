@@ -36,13 +36,13 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 import PyQt4.QtCore as QtCore
 
-from electrum_ltc.i18n import _, set_language
-from electrum_ltc.plugins import run_hook
-from electrum_ltc import SimpleConfig, Wallet, WalletStorage
-from electrum_ltc.synchronizer import Synchronizer
-from electrum_ltc.verifier import SPV
-from electrum_ltc.util import DebugMem, UserCancelled, InvalidPassword
-from electrum_ltc.wallet import Abstract_Wallet
+from electrum_khc.i18n import _, set_language
+from electrum_khc.plugins import run_hook
+from electrum_khc import SimpleConfig, Wallet, WalletStorage
+from electrum_khc.synchronizer import Synchronizer
+from electrum_khc.verifier import SPV
+from electrum_khc.util import DebugMem, UserCancelled, InvalidPassword
+from electrum_khc.wallet import Abstract_Wallet
 from installwizard import InstallWizard, GoBack
 
 
@@ -91,7 +91,7 @@ class ElectrumGui:
         # init tray
         self.dark_icon = self.config.get("dark_icon", False)
         self.tray = QSystemTrayIcon(self.tray_icon(), None)
-        self.tray.setToolTip('Electrum-LTC')
+        self.tray.setToolTip('Electrum-KHC')
         self.tray.activated.connect(self.tray_activated)
         self.build_tray_menu()
         self.tray.show()
@@ -108,7 +108,7 @@ class ElectrumGui:
             submenu.addAction(_("Close"), window.close)
         m.addAction(_("Dark/Light"), self.toggle_tray_icon)
         m.addSeparator()
-        m.addAction(_("Exit Electrum-LTC"), self.close)
+        m.addAction(_("Exit Electrum-KHC"), self.close)
         self.tray.setContextMenu(m)
 
     def tray_icon(self):

@@ -4,7 +4,7 @@ from PyQt4.QtCore import *
 from PyQt4.QtGui import *
 
 from decimal import Decimal
-from electrum_ltc.util import format_satoshis_plain
+from electrum_khc.util import format_satoshis_plain
 
 class MyLineEdit(QLineEdit):
     frozen = pyqtSignal()
@@ -78,9 +78,9 @@ class BTCAmountEdit(AmountEdit):
         p = self.decimal_point()
         assert p in [2, 5, 8]
         if p == 8:
-            return 'LTC'
+            return 'KHC'
         if p == 5:
-            return 'mLTC'
+            return 'mKHC'
         if p == 2:
             return 'bits'
         raise Exception('Unknown base unit')

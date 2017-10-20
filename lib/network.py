@@ -59,7 +59,7 @@ def set_testnet():
     DEFAULT_PORTS = {'t':'51001', 's':'51002'}
     DEFAULT_SERVERS = {
         'electrum-ltc.bysh.me': DEFAULT_PORTS,
-        'electrum.ltc.xurious.com': DEFAULT_PORTS,
+        'electrum.khc.xurious.com': DEFAULT_PORTS,
     }
 
 def set_nolnet():

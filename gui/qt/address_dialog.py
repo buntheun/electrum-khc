@@ -23,7 +23,7 @@
 # CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 # SOFTWARE.
 
-from electrum_ltc.i18n import _
+from electrum_khc.i18n import _
 
 import PyQt4
 from PyQt4.QtGui import *

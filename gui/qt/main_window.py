@@ -41,19 +41,19 @@ import PyQt4.QtCore as QtCore
 
 import icons_rc
 
-from electrum_ltc import keystore
-from electrum_ltc.bitcoin import COIN, is_valid, TYPE_ADDRESS
-from electrum_ltc.plugins import run_hook
-from electrum_ltc.i18n import _
-from electrum_ltc.util import (format_time, format_satoshis, PrintError,
+from electrum_khc import keystore
+from electrum_khc.bitcoin import COIN, is_valid, TYPE_ADDRESS
+from electrum_khc.plugins import run_hook
+from electrum_khc.i18n import _
+from electrum_khc.util import (format_time, format_satoshis, PrintError,
                                format_satoshis_plain, NotEnoughFunds,
                                UserCancelled)
-from electrum_ltc import Transaction, mnemonic
-from electrum_ltc import util, bitcoin, commands, coinchooser
-from electrum_ltc import SimpleConfig, paymentrequest
-from electrum_ltc.wallet import Wallet, Multisig_Wallet
+from electrum_khc import Transaction, mnemonic
+from electrum_khc import util, bitcoin, commands, coinchooser
+from electrum_khc import SimpleConfig, paymentrequest
+from electrum_khc.wallet import Wallet, Multisig_Wallet
 try:
-    from electrum_ltc.plot import plot_history
+    from electrum_khc.plot import plot_history
 except:
     plot_history = None
 
@@ -64,7 +64,7 @@ from transaction_dialog import show_transaction
 from fee_slider import FeeSlider
 
 
-from electrum_ltc import ELECTRUM_VERSION
+from electrum_khc import ELECTRUM_VERSION
 import re
 
 from util import *
@@ -89,7 +89,7 @@ class StatusBarButton(QPushButton):
             self.func()
 
 
-from electrum_ltc.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
+from electrum_khc.paymentrequest import PR_UNPAID, PR_PAID, PR_UNKNOWN, PR_EXPIRED
 
 
 class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
@@ -154,7 +154,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         if self.config.get("is_maximized"):
             self.showMaximized()
 
-        self.setWindowIcon(QIcon(":icons/electrum-ltc.png"))
+        self.setWindowIcon(QIcon(":icons/electrum-khc.png"))
         self.init_menubar()
 
         wrtabs = weakref.proxy(tabs)
@@ -914,7 +914,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
     def new_payment_request(self):
         addr = self.wallet.get_unused_address()
         if addr is None:
-            from electrum_ltc.wallet import Imported_Wallet
+            from electrum_khc.wallet import Imported_Wallet
             if not self.wallet.is_deterministic():
                 msg = [
                     _('No more addresses in your wallet.'),
@@ -2023,7 +2023,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
 
 
     def tx_from_text(self, txt):
-        from electrum_ltc.transaction import tx_from_str, Transaction
+        from electrum_khc.transaction import tx_from_str, Transaction
         try:
             tx = tx_from_str(txt)
             return Transaction(tx)
@@ -2033,7 +2033,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
             return
 
     def read_tx_from_qrcode(self):
-        from electrum_ltc import qrscanner
+        from electrum_khc import qrscanner
         try:
             data = qrscanner.scan_barcode(self.config.get_video_device())
         except BaseException as e:
@@ -2082,7 +2082,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
             self.show_transaction(tx)
 
     def do_process_from_txid(self):
-        from electrum_ltc import transaction
+        from electrum_khc import transaction
         txid, ok = QInputDialog.getText(self, _('Lookup transaction'), _('Transaction ID') + ':')
         if ok and txid:
             txid = str(txid).strip()
@@ -2381,7 +2381,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         lang_help = _('Select which language is used in the GUI (after restart).')
         lang_label = HelpLabel(_('Language') + ':', lang_help)
         lang_combo = QComboBox()
-        from electrum_ltc.i18n import languages
+        from electrum_khc.i18n import languages
         lang_combo.addItems(languages.values())
         try:
             index = languages.keys().index(self.config.get("language",''))
@@ -2554,7 +2554,7 @@ class ElectrumWindow(QMainWindow, MessageBoxMixin, PrintError):
         block_ex_combo.currentIndexChanged.connect(on_be)
         gui_widgets.append((block_ex_label, block_ex_combo))
 
-        from electrum_ltc import qrscanner
+        from electrum_khc import qrscanner
         system_cameras = qrscanner._find_system_cameras()
         qr_combo = QComboBox()
         qr_combo.addItem("Default","default")

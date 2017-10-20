@@ -28,9 +28,9 @@ from PyQt4.QtGui import *
 from PyQt4.QtCore import *
 import PyQt4.QtCore as QtCore
 
-from electrum_ltc.i18n import _
-from electrum_ltc.network import DEFAULT_PORTS
-from electrum_ltc.network import serialize_server, deserialize_server
+from electrum_khc.i18n import _
+from electrum_khc.network import DEFAULT_PORTS
+from electrum_khc.network import serialize_server, deserialize_server
 
 from util import *
 
