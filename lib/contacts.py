@@ -92,13 +92,13 @@ class Contacts(dict):
                 'type': 'openalias',
                 'validated': validated
             }
-        raise Exception("Invalid Litecoin address or alias", k)
+        raise Exception("Invalid KHcoin address or alias", k)
 
     def resolve_openalias(self, url):
         # support email-style addresses, per the OA standard
         url = url.replace('@', '.')
         records, validated = dnssec.query(url, dns.rdatatype.TXT)
-        prefix = 'ltc'
+        prefix = 'khc'
         for record in records:
             string = record.strings[0]
             if string.startswith('oa1:' + prefix):

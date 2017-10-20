@@ -28,12 +28,12 @@ if platform.system() in ['Linux', 'FreeBSD', 'DragonFly']:
         else:
             usr_share = os.path.expanduser('~/.local/share')
     data_files += [
-        (os.path.join(usr_share, 'applications/'), ['electrum-ltc.desktop']),
-        (os.path.join(usr_share, 'pixmaps/'), ['icons/electrum-ltc.png'])
+        (os.path.join(usr_share, 'applications/'), ['electrum-khc.desktop']),
+        (os.path.join(usr_share, 'pixmaps/'), ['icons/electrum-khc.png'])
     ]
 
 setup(
-    name="Electrum-LTC",
+    name="Electrum-KHC",
     version=version.ELECTRUM_VERSION,
     install_requires=[
         'pyaes',
@@ -48,40 +48,40 @@ setup(
         'PySocks>=1.6.6',
     ],
     packages=[
-        'electrum_ltc',
-        'electrum_ltc_gui',
-        'electrum_ltc_gui.qt',
-        'electrum_ltc_plugins',
-        'electrum_ltc_plugins.audio_modem',
-        'electrum_ltc_plugins.cosigner_pool',
-        'electrum_ltc_plugins.email_requests',
-        'electrum_ltc_plugins.hw_wallet',
-        'electrum_ltc_plugins.keepkey',
-        'electrum_ltc_plugins.labels',
-        'electrum_ltc_plugins.ledger',
-        'electrum_ltc_plugins.trezor',
-        'electrum_ltc_plugins.digitalbitbox',
-        'electrum_ltc_plugins.virtualkeyboard',
+        'electrum_khc',
+        'electrum_khc_gui',
+        'electrum_khc_gui.qt',
+        'electrum_khc_plugins',
+        'electrum_khc_plugins.audio_modem',
+        'electrum_khc_plugins.cosigner_pool',
+        'electrum_khc_plugins.email_requests',
+        'electrum_khc_plugins.hw_wallet',
+        'electrum_khc_plugins.keepkey',
+        'electrum_khc_plugins.labels',
+        'electrum_khc_plugins.ledger',
+        'electrum_khc_plugins.trezor',
+        'electrum_khc_plugins.digitalbitbox',
+        'electrum_khc_plugins.virtualkeyboard',
     ],
     package_dir={
-        'electrum_ltc': 'lib',
-        'electrum_ltc_gui': 'gui',
-        'electrum_ltc_plugins': 'plugins',
+        'electrum_khc': 'lib',
+        'electrum_khc_gui': 'gui',
+        'electrum_khc_plugins': 'plugins',
     },
     package_data={
-        'electrum_ltc': [
+        'electrum_khc': [
             'currencies.json',
             'www/index.html',
             'wordlist/*.txt',
             'locale/*/LC_MESSAGES/electrum.mo',
         ]
     },
-    scripts=['electrum-ltc'],
+    scripts=['electrum-khc'],
     data_files=data_files,
-    description="Lightweight Litecoin Wallet",
-    author="Thomas Voegtlin",
-    author_email="thomasv@electrum.org",
+    description="Lightweight KHcoin Wallet",
+    author="In Mean",
+    author_email="inmean@khmercrypt.com",
     license="MIT Licence",
-    url="http://electrum-ltc.org",
-    long_description="""Lightweight Litecoin Wallet"""
+    url="http://khmercrypto.com",
+    long_description="""Lightweight KHcoin Wallet"""
 )

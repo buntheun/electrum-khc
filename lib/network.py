@@ -51,17 +51,7 @@ DEFAULT_PORTS = {'t':'50001', 's':'50002'}
 #then gradually switch remaining nodes to e-x nodes
 
 DEFAULT_SERVERS = {
-    'e-1.claudiobox.com': {'t':'50003', 's':'50004'},
-    'e-2.claudiobox.com': {'t':'50003', 's':'50004'},
-    'electrum-ltc.bysh.me': DEFAULT_PORTS,
-    'electrum-ltc.ddns.net': DEFAULT_PORTS,
-    'electrum-ltc.petrkr.net': {'t':'60001', 's':'60002'},
-    'electrum-ltc.villocq.com': {'t':'60001', 's':'60002'},
-    'electrum-ltc.wilv.in': DEFAULT_PORTS,
-    'electrum.ltc.xurious.com': DEFAULT_PORTS,
-    'electrum-ltc0.snel.it': {'t':'50003', 's':'50004'},
-    'electrumx.nmdps.net': {'t':'9433', 's':'9434'},
-    'ltc01.knas.systems': {'t':'50003', 's':'50004'},
+    'electrum.khcoin.inmean.com': {'t':'50001', 's':'50002'},
 }
 
 def set_testnet():

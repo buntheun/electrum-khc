@@ -49,8 +49,8 @@ import rsakey
 
 from bitcoin import TYPE_ADDRESS
 
-REQUEST_HEADERS = {'Accept': 'application/litecoin-paymentrequest', 'User-Agent': 'Electrum'}
-ACK_HEADERS = {'Content-Type':'application/litecoin-payment','Accept':'application/litecoin-paymentack','User-Agent':'Electrum'}
+REQUEST_HEADERS = {'Accept': 'application/khcoin-paymentrequest', 'User-Agent': 'Electrum'}
+ACK_HEADERS = {'Content-Type':'application/khcoin-payment','Accept':'application/khcoin-paymentack','User-Agent':'Electrum'}
 
 ca_path = requests.certs.where()
 ca_list = None
@@ -80,7 +80,7 @@ def get_payment_request(url):
             response.raise_for_status()
             # Guard against `bitcoin:`-URIs with invalid payment request URLs
             if "Content-Type" not in response.headers \
-            or response.headers["Content-Type"] != "application/litecoin-paymentrequest":
+            or response.headers["Content-Type"] != "application/khcoin-paymentrequest":
                 data = None
                 error = "payment URL not pointing to a payment request handling server"
             else:
@@ -155,7 +155,7 @@ class PaymentRequest:
             return True
         if pr.pki_type in ["x509+sha256", "x509+sha1"]:
             return self.verify_x509(pr)
-        elif pr.pki_type in ["dnssec+ltc", "dnssec+ecdsa"]:
+        elif pr.pki_type in ["dnssec+khc", "dnssec+ecdsa"]:
             return self.verify_dnssec(pr, contacts)
         else:
             self.error = "ERROR: Unsupported PKI Type for Message Signature"
@@ -205,7 +205,7 @@ class PaymentRequest:
         if info.get('validated') is not True:
             self.error = "Alias verification failed (DNSSEC)"
             return False
-        if pr.pki_type == "dnssec+ltc":
+        if pr.pki_type == "dnssec+khc":
             self.requestor = alias
             address = info.get('address')
             pr.signature = ''
@@ -327,7 +327,7 @@ def make_unsigned_request(req):
 
 
 def sign_request_with_alias(pr, alias, alias_privkey):
-    pr.pki_type = 'dnssec+ltc'
+    pr.pki_type = 'dnssec+khc'
     pr.pki_data = str(alias)
     message = pr.SerializeToString()
     ec_key = bitcoin.regenerate_key(alias_privkey)
@@ -437,7 +437,7 @@ def serialize_request(req):
     requestor = req.get('name')
     if requestor and signature:
         pr.signature = signature.decode('hex')
-        pr.pki_type = 'dnssec+ltc'
+        pr.pki_type = 'dnssec+khc'
         pr.pki_data = str(requestor)
     return pr
 

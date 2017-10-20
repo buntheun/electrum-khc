@@ -35,7 +35,7 @@ import urllib
 import threading
 from i18n import _
 
-base_units = {'LTC':8, 'mLTC':5, 'uLTC':2}
+base_units = {'KHC':8, 'mKHC':5, 'uKHC':2}
 fee_levels = [_('Within 25 blocks'), _('Within 10 blocks'), _('Within 5 blocks'), _('Within 2 blocks'), _('In the next block')]
 
 def normalize_version(v):
@@ -214,7 +214,7 @@ def android_data_dir():
     return PythonActivity.mActivity.getFilesDir().getPath() + '/data'
 
 def android_headers_dir():
-    d = android_ext_dir() + '/org.electrum_ltc.electrum_ltc'
+    d = android_ext_dir() + '/org.electrum_khc.electrum_khc'
     if not os.path.exists(d):
         os.mkdir(d)
     return d
@@ -223,7 +223,7 @@ def android_check_data_dir():
     """ if needed, move old directory to sandbox """
     ext_dir = android_ext_dir()
     data_dir = android_data_dir()
-    old_electrum_dir = ext_dir + '/electrum-ltc'
+    old_electrum_dir = ext_dir + '/electrum-khc'
     if not os.path.exists(data_dir) and os.path.exists(old_electrum_dir):
         import shutil
         new_headers_path = android_headers_dir() + '/blockchain_headers'
@@ -242,11 +242,11 @@ def user_dir():
     if 'ANDROID_DATA' in os.environ:
         return android_check_data_dir()
     elif os.name == 'posix':
-        return os.path.join(os.environ["HOME"], ".electrum-ltc")
+        return os.path.join(os.environ["HOME"], ".electrum-khc")
     elif "APPDATA" in os.environ:
-        return os.path.join(os.environ["APPDATA"], "Electrum-LTC")
+        return os.path.join(os.environ["APPDATA"], "Electrum-KHC")
     elif "LOCALAPPDATA" in os.environ:
-        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-LTC")
+        return os.path.join(os.environ["LOCALAPPDATA"], "Electrum-KHC")
     else:
         #raise Exception("No home directory found in environment variables.")
         return
@@ -344,21 +344,15 @@ def time_difference(distance_in_time, include_seconds):
         return "over %d years" % (round(distance_in_minutes / 525600))
 
 mainnet_block_explorers = {
-    'explorer.litecoin.net': ('http://explorer.litecoin.net',
+    'khc.inmean.com': ('http://khc.inmean.com',
                         {'tx': 'tx', 'addr': 'address'}),
-    'Blockr.io': ('https://ltc.blockr.io',
-                        {'tx': 'tx/info', 'addr': 'address/info'}),
-    'BlockCypher.com': ('https://live.blockcypher.com/ltc',
-                        {'tx': 'tx', 'addr': 'address'}),
-    'SoChain': ('https://chain.so',
-                        {'tx': 'tx/LTC', 'addr': 'address/LTC'}),
     'system default': ('blockchain:',
                         {'tx': 'tx', 'addr': 'address'}),
 }
 
 testnet_block_explorers = {
     'SoChain': ('https://chain.so',
-                        {'tx': 'tx/LTCTEST', 'addr': 'address/LTCTEST'}),
+                        {'tx': 'tx/KHCTEST', 'addr': 'address/KHCTEST'}),
     'system default': ('blockchain:',
                        {'tx': 'tx', 'addr': 'address'}),
 }
@@ -393,12 +387,12 @@ def parse_URI(uri, on_pr=None):
 
     if ':' not in uri:
         if not bitcoin.is_address(uri):
-            raise BaseException("Not a litecoin address")
+            raise BaseException("Not a khcoin address")
         return {'address': uri}
 
     u = urlparse.urlparse(uri)
-    if u.scheme != 'litecoin':
-        raise BaseException("Not a litecoin URI")
+    if u.scheme != 'khcoin':
+        raise BaseException("Not a khcoin URI")
     address = u.path
 
     # python for android fails to parse query
@@ -415,7 +409,7 @@ def parse_URI(uri, on_pr=None):
     out = {k: v[0] for k, v in pq.items()}
     if address:
         if not bitcoin.is_address(address):
-            raise BaseException("Invalid litecoin address:" + address)
+            raise BaseException("Invalid khcoin address:" + address)
         out['address'] = address
     if 'amount' in out:
         am = out['amount']
@@ -466,7 +460,7 @@ def create_URI(addr, amount, message):
         if type(message) == unicode:
             message = message.encode('utf8')
         query.append('message=%s'%urllib.quote(message))
-    p = urlparse.ParseResult(scheme='litecoin', netloc='', path=addr, params='', query='&'.join(query), fragment='')
+    p = urlparse.ParseResult(scheme='khcoin', netloc='', path=addr, params='', query='&'.join(query), fragment='')
     return urlparse.urlunparse(p)
 
 
