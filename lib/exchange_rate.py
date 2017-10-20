@@ -225,7 +225,7 @@ class MercadoBitcoin(ExchangeBase):
 
     def get_rates(self,ccy):
         json = self.get_json('mercadobitcoin.net',
-                                "/api/v2/ticker_litecoin")
+                                "/api/v2/ticker_khcoin")
         return {'BRL': Decimal(json['ticker']['last'])}
 
 
@@ -233,7 +233,7 @@ class Bitcointoyou(ExchangeBase):
 
     def get_rates(self,ccy):
         json = self.get_json('bitcointoyou.com',
-                                "/API/ticker_litecoin.aspx")
+                                "/API/ticker_khcoin.aspx")
         return {'BRL': Decimal(json['ticker']['last'])}
 
 

@@ -64,8 +64,8 @@ def set_testnet():
     XPUB_HEADER = 0x043587cf
     XPRV_HEADER_ALT = 0x0436ef7d
     XPUB_HEADER_ALT = 0x0436f6e1
-    HEADERS_URL = "https://electrum-ltc.org/testnet_headers"
-    GENESIS = "4966625a4b2851d9fdee139e56211a0d88575f59ed816ff5e6a63deb4e3e29a0"
+    HEADERS_URL = ""
+    GENESIS = "880f88fae7fa11cbfd440e4a0a29cb68c190ace7dffe89aec31a963a442aae00"
 
 def set_nolnet():
     global ADDRTYPE_P2PKH, ADDRTYPE_P2SH, ADDRTYPE_P2WPKH
@@ -489,7 +489,7 @@ from ecdsa.util import string_to_number, number_to_string
 def msg_magic(message):
     varint = var_int(len(message))
     encoded_varint = "".join([chr(int(varint[i:i+2], 16)) for i in xrange(0, len(varint), 2)])
-    return "\x19Litecoin Signed Message:\n" + encoded_varint + message
+    return "\x19KHcoin Signed Message:\n" + encoded_varint + message
 
 
 def verify_message(address, sig, message):

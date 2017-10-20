@@ -1,12 +1,12 @@
 from PyQt4.QtGui import *
-from electrum_ltc.i18n import _
+from electrum_khc.i18n import _
 
 
 import datetime
 from collections import defaultdict
 
-from electrum_ltc.util import format_satoshis
-from electrum_ltc.bitcoin import COIN
+from electrum_khc.util import format_satoshis
+from electrum_khc.bitcoin import COIN
 
 import matplotlib
 matplotlib.use('Qt4Agg')
@@ -37,7 +37,7 @@ def plot_history(wallet, history):
     plt.subplots_adjust(bottom=0.2)
     plt.xticks( rotation=25 )
     ax = plt.gca()
-    plt.ylabel('LTC')
+    plt.ylabel('KHC')
     plt.xlabel('Month')
     xfmt = md.DateFormatter('%Y-%m-%d')
     ax.xaxis.set_major_formatter(xfmt)

@@ -2,5 +2,5 @@
 rm -rf dist
 VERSION=`git describe --tags`
 python2 setup-release.py py2app
-hdiutil create -fs HFS+ -volname "Electrum-LTC" -srcfolder dist/Electrum-LTC.app dist/electrum-ltc-$VERSION.dmg
+hdiutil create -fs HFS+ -volname "Electrum-KHC" -srcfolder dist/Electrum-KHC.app dist/electrum-khc-$VERSION.dmg
 
