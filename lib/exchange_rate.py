@@ -221,6 +221,13 @@ class OKCoin(ExchangeBase):
         return {'CNY': Decimal(json['ticker']['last'])}
 
 
+class KHICO(ExchangeBase):
+
+    def get_rates(self, ccy):
+        json = self.get_json('www.khcoinproject.com', '/api/symbol=khc_usd')
+        return {'USD': Decimal(json['ticker']['last'])}
+
+
 class MercadoBitcoin(ExchangeBase):
 
     def get_rates(self,ccy):
