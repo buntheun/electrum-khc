@@ -224,7 +224,7 @@ class OKCoin(ExchangeBase):
 class KHICO(ExchangeBase):
 
     def get_rates(self, ccy):
-        json = self.get_json('www.khcoinproject.com', '/api/symbol=khc_usd')
+        json = self.get_json('www.khcoinproject.com', '/api/symbol/khc_usd')
         return {'USD': Decimal(json['ticker']['last'])}
 
 
