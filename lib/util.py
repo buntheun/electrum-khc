@@ -344,7 +344,7 @@ def time_difference(distance_in_time, include_seconds):
         return "over %d years" % (round(distance_in_minutes / 525600))
 
 mainnet_block_explorers = {
-    'khc.inmean.com': ('http://khc.inmean.com',
+    'explorer.khcoin.inmean.com': ('http://explorer.khcoin.inmean.com',
                         {'tx': 'tx', 'addr': 'address'}),
     'system default': ('blockchain:',
                         {'tx': 'tx', 'addr': 'address'}),

@@ -47,7 +47,7 @@ XPRV_HEADER = 0x0488ade4
 XPUB_HEADER = 0x0488b21e
 XPRV_HEADER_ALT = 0x019d9cfe
 XPUB_HEADER_ALT = 0x019da462
-HEADERS_URL = ""
+HEADERS_URL = "http://headers.khcoinproject.com"
 GENESIS = "880f88fae7fa11cbfd440e4a0a29cb68c190ace7dffe89aec31a963a442aae00"
 
 def set_testnet():

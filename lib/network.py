@@ -52,6 +52,7 @@ DEFAULT_PORTS = {'t':'50001', 's':'50002'}
 
 DEFAULT_SERVERS = {
     'electrum.khcoin.inmean.com': {'t':'50001', 's':'50002'},
+    'electrum.khcoinproject.com': {'t':'50001', 's':'50002'},
 }
 
 def set_testnet():
